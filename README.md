@@ -1,8 +1,22 @@
 # WXPN Newsletter Template
 
-A modern, responsive newsletter template designed for WXPN featuring:
+A modern, responsive newsletter template designed for WXPN featuring automated GitHub Pages deployment.
 
-## Features
+## 🚀 Quick Start
+
+1. **Edit your newsletter**: Work with `New Newsletter.html` or `index.html`
+2. **Deploy changes**: Run `./deploy.sh` or use VS Code Task (Cmd+Shift+P → "Tasks: Run Task" → "Deploy to GitHub Pages")
+3. **View live site**: https://alex-colemankime.github.io/wxpn-newsletter
+
+## 📁 File Structure
+
+- `index.html` - Main newsletter file (served by GitHub Pages)
+- `New Newsletter.html` - Working copy (automatically synced to index.html)
+- `header-bg.svg` - Header background image
+- `deploy.sh` - Quick deployment script
+- `.github/workflows/pages.yml` - Automated GitHub Pages deployment
+
+## 🎨 Features
 
 - **Modern Design**: Clean, professional layout with NPR/World Cafe styling
 - **Responsive**: Works on desktop and mobile devices
@@ -12,12 +26,12 @@ A modern, responsive newsletter template designed for WXPN featuring:
 - **Concert Listings**: Dark-themed upcoming shows section
 - **Video Gallery**: YouTube video highlights with thumbnails
 
-## Design Elements
+## 🎨 Design Elements
 
 - **Typography**: Public Sans for body text, Lora for headlines
 - **Color Scheme**: WXPN red (#c73e1d), professional grays and blues
 - **Images**: Consistent 16:9 aspect ratio throughout
-- **Buttons**: Modern rounded buttons with hover effects
+- **Buttons**: Modern rounded buttons without hover effects (email-safe)
 - **Sections**: Hero story, main stories, World Cafe highlights, concerts, and video content
 
 ## Sections

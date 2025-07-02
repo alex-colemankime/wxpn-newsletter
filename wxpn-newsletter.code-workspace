@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "html.format.enable": true,
+        "html.format.wrapLineLength": 120,
+        "files.associations": {
+            "*.html": "html"
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.vscode-html-languageservice",
+            "bradlc.vscode-tailwindcss"
+        ]
+    }
+}

@@ -4,334 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WXPN News Update</title>
-    <!-- Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:400,600,700,900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet" />
-</head>
-<body>
-<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <style>
+        /* Base Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Public Sans', Arial, sans-serif; line-height: 1.6; color: #2c2c2c; background: #f8f9fa; }
+        .email-container { max-width: 680px; margin: 0 auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
         
-        body {
-            font-family: 'Public Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #2c2c2c;
-            background-color: #f8f9fa;
-        }
+        /* Header */
+        .header { background: #1a365d url('header-bg.svg') center/cover; padding: 24px 32px; }
+        .logo { color: #fff; font: 900 32px 'Lora', serif; letter-spacing: -0.5px; margin-bottom: 2px; }
+        .tagline { color: #f7fafc; font: 500 14px 'Lora', serif; letter-spacing: 0.3px; }
         
-        .email-container {
-            max-width: 680px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-        }
-        .header {
-            background: #1a365d url('header-bg.svg') center center/cover no-repeat;
-            padding: 24px 32px;
-        }
-        .logo {
-            color: #ffffff;
-            font-family: 'Lora', Georgia, serif;
-            font-size: 32px;
-            font-weight: 900;
-            letter-spacing: -0.5px;
-            margin-bottom: 2px;
-        }
-        .tagline {
-            color: #f7fafc;
-            font-family: 'Lora', Georgia, serif;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-            text-transform: none;
-        }
-        .issue-info {
-            background: #f7fafc;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 3px 32px;
-            display: block;
-            font-size: 16px;
-            color: #718096;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 600;
-            text-align: center;
-        }
-        .intro-section {
-            display: block;
-            padding: 18px 0 18px 0;
-            border-bottom: 1px solid #e2e8f0;
-            border-top: 1px solid #e2e8f0;
-            background: #f9fafb;
-        }
-        .hero-section { margin-bottom: 0; }
-        .hero-content { padding: 24px; background-color: #ffffff; }
-        .main-content { padding: 24px 32px 16px 32px; }
-        .author-name-below {
-            margin-top: 16px;
-            width: 120px;
-            text-align: center;
-            font-weight: 700;
-            color: #1a202c;
-            font-size: 16px;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        }
-        .hero-section { margin-bottom: 0; }
-        .hero-content { padding: 24px; background-color: #ffffff; }
-        .main-content { padding: 24px 32px 16px 32px; }
-        .story-item {
-            display: block;
-            margin-bottom: 16px;
-            padding: 16px;
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-        }
-        .world-cafe-wrapper {
-            background: linear-gradient(135deg, rgba(219, 64, 67, 0.3), rgba(239, 255, 252, 0.25), rgba(219, 64, 67, 0.35));
-            border-radius: 12px;
-            padding: 4px;
-            margin-top: 8px;
-        }
-        .world-cafe-section {
-            background-color: #f7f9f9;
-            border-radius: 10px;
-            padding: 16px;
-        }
-        .world-cafe-title {
-            font-size: 30px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 800;
-            color: #c73e1d;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-            text-align: center;
-        }
-        .world-cafe-story {
-            display: block;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 16px;
-        }
-        .world-cafe-story:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .concerts-section {
-            background: #1a202c;
-            color: #ffffff;
-            padding: 24px 20px;
-            margin: 24px 0 20px 0;
-        }
-        .concerts-title {
-            font-size: 30px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        .concert-item {
-            background: #232b36;
-            border-radius: 12px;
-            padding: 12px;
-            border: 1px solid #2d3748;
-            margin-bottom: 8px;
-            position: relative;
-            overflow: hidden;
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-        .concert-date-location {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: #e53e3e;
-            color: #ffffff;
-            padding: 3px 8px;
-            border-radius: 12px 0 8px 0;
-            font-size: 9px;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2px;
-            z-index: 1;
-            border-right: 1px solid #2d3748;
-            border-bottom: 1px solid #2d3748;
-        }
-        .concert-header { margin: 18px 0 0 0; padding-top: 2px; }
-        .concert-artist-venue-price {
-            font-size: 17px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.3;
-        }
-        .concert-venue-inline {
-            font-weight: 500;
-            color: #cbd5e0;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        }
-        .concert-price-inline {
-            font-size: 13px;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-weight: 600;
-            color: #fbb040;
-            margin-left: 8px;
-        }
-        .wxpn-welcomes-banner {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: #2a5885;
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 0 12px 0 12px;
-            font-size: 10px;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            z-index: 1;
-            border-left: 1px solid #2d3748;
-            border-bottom: 1px solid #2d3748;
-        }
-        .wxpn-welcomes-banner::before {
-            content: "★";
-            font-size: 10px;
-            color: #ffd700;
-        }
-        .footer {
-            background: #1a202c;
-            color: #a0aec0;
-            font-size: 12px;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
-            padding: 24px 32px;
-            text-align: center;
-            letter-spacing: 0.25px;
-            border-top: 2px solid #4a5568;
-        }
-        .footer * {
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
-        }
-        .footer div, .footer span {
-            color: #a0aec0 !important;
-        }
-        .footer strong {
-            color: #e2e8f0 !important;
-            font-weight: 600;
-        }
-        .footer a:not(.btn-base):not(.btn-secondary) { color: #718096; text-decoration: underline; }
-        .footer a:not(.btn-base):not(.btn-secondary):hover { color: #e53e3e; }
-        /* Utility classes for common styles */
-        .font-primary { font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif; }
-        .font-serif { font-family: 'Lora', Georgia, serif; }
-        .text-primary { color: #1a202c; }
-        .text-secondary { color: #4a5568; }
-        .text-muted { color: #718096; }
-        .text-white { color: #ffffff; }
-        .bg-red { background: #e53e3e; }
-        .bg-dark-red { background: #c53030; }
+        /* Layout Sections */
+        .issue-info { background: #f7fafc; border-bottom: 1px solid #e2e8f0; padding: 3px 32px; font: 600 16px 'Lora', serif; color: #718096; text-align: center; letter-spacing: 0.5px; }
+        .intro-section { padding: 20px 0; border: 1px solid #e2e8f0; border-left: 0; border-right: 0; background: #f9fafb; }
+        .hero-content { padding: 24px; background: #fff; }
+        .main-content { padding: 24px 32px 16px; }
+        .story-item { margin-bottom: 16px; padding: 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; }
+        
+        /* World Cafe */
+        .world-cafe-wrapper { background: linear-gradient(135deg, rgba(219,64,67,0.3), rgba(239,255,252,0.25), rgba(219,64,67,0.35)); border-radius: 12px; padding: 4px; margin-top: 8px; }
+        .world-cafe-section { background: #f7f9f9; border-radius: 10px; padding: 16px; }
+        .world-cafe-title { font: 800 30px 'Lora', serif; color: #c73e1d; margin-bottom: 16px; letter-spacing: 0.5px; text-align: center; }
+        .world-cafe-story { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 16px; }
+        .world-cafe-story:last-child { margin-bottom: 0; border-bottom: 0; padding-bottom: 0; }
+        .world-cafe-headline { font: 700 18px 'Lora', serif; color: #a52a2a; margin-bottom: 8px; line-height: 1.3; }
+        .world-cafe-headline a { color: #a52a2a; text-decoration: none; }
+        .world-cafe-excerpt { font: 14px 'Public Sans', sans-serif; color: #4a5568; margin-bottom: 6px; line-height: 1.5; }
+        
+        /* Concerts */
+        .concerts-section { background: #1a202c; color: #fff; padding: 24px 20px; margin: 24px 0 20px; border: 2px solid #4a5568; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .concerts-title { font: 800 30px 'Lora', serif; color: #fff; letter-spacing: 0.5px; text-align: center; margin-bottom: 16px; }
+        .concert-item { background: #232b36; border-radius: 12px; padding: 12px; border: 1px solid #2d3748; margin-bottom: 8px; position: relative; overflow: hidden; display: block; text-decoration: none; color: inherit; }
+        .concert-date-location { position: absolute; top: 0; left: 0; background: #e53e3e; color: #fff; padding: 3px 8px; border-radius: 12px 0 8px 0; font: 700 9px 'Public Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; z-index: 1; border-right: 1px solid #2d3748; border-bottom: 1px solid #2d3748; }
+        .concert-header { margin: 18px 0 0; padding-top: 2px; }
+        .concert-artist-venue-price { font: 700 17px 'Lora', serif; color: #fff; line-height: 1.3; }
+        .concert-venue-inline { font: 500 17px 'Public Sans', sans-serif; color: #cbd5e0; }
+        .concert-price-inline { font: 600 13px 'Public Sans', sans-serif; color: #fbb040; margin-left: 8px; }
+        .wxpn-welcomes-banner { position: absolute; top: 0; right: 0; background: #2a5885; color: #fff; padding: 5px 10px; border-radius: 0 12px 0 12px; font: 600 10px 'Public Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.2px; display: inline-flex; align-items: center; gap: 3px; z-index: 1; border-left: 1px solid #2d3748; border-bottom: 1px solid #2d3748; }
+        .wxpn-welcomes-banner::before { content: "★"; font-size: 10px; color: #ffd700; }
         
         /* Buttons */
-        .btn-base {
-            padding: 8px 16px;
-            border-radius: 20px;
-            text-decoration: none !important;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            transition: all 0.2s ease;
-        }
-        .btn-primary { background: #e53e3e; color: #ffffff !important; font-size: 12px; }
-        .btn-secondary { background: #a5494c; color: #ffffff !important; font-size: 13px; }
-        .btn-read-more {
-            color: #c05659;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(192, 86, 89, 0.4);
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            display: block;
-            width: 100%;
-            text-align: center;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        }
+        .btn-base { padding: 8px 16px; border-radius: 20px; text-decoration: none !important; font: 600 13px 'Public Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; }
+        .btn-secondary { background: #a5494c; color: #fff !important; }
+        .btn-read-more { color: #c05659; font: 600 12px 'Public Sans', sans-serif; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(192,86,89,0.4); padding: 6px 12px; border-radius: 4px; display: block; width: 100%; text-align: center; }
         .btn-read-more-small { font-size: 11px; padding: 5px 8px; }
         
         /* Typography */
-        .headline-hero {
-            font-size: 32px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 800;
-            line-height: 1.2;
-            color: #1a202c;
-            letter-spacing: -0.5px;
-        }
-        .headline-story {
-            font-size: 20px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #1a202c;
-            letter-spacing: -0.25px;
-        }
-        .world-cafe-headline {
-            font-size: 18px;
-            font-family: 'Lora', Georgia, serif;
-            font-weight: 700;
-            color: #a52a2a;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        .world-cafe-headline a { color: #a52a2a; text-decoration: none; }
-        .world-cafe-headline a:hover { color: #8b1a1a; }
-        .world-cafe-excerpt {
-            font-size: 14px;
-            color: #4a5568;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-        .world-cafe-meta, .meta-text {
-            font-size: 12px;
-            color: #718096;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-weight: 500;
-        }
-        .excerpt-hero {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #4a5568;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-weight: 400;
-        }
-        .excerpt-story {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #4a5568;
-            font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        }
+        .headline-hero { font: 800 32px 'Lora', serif; line-height: 1.2; color: #1a202c; letter-spacing: -0.5px; }
+        .headline-story { font: 700 20px 'Lora', serif; line-height: 1.3; color: #1a202c; letter-spacing: -0.25px; }
+        .meta-text { font: 500 12px 'Public Sans', sans-serif; color: #718096; }
         .meta-text-hero { font-size: 13px; }
+        .excerpt-hero { font: 400 16px 'Public Sans', sans-serif; line-height: 1.6; color: #4a5568; }
+        .excerpt-story { font: 15px 'Public Sans', sans-serif; line-height: 1.5; color: #4a5568; }
         
-        /* Responsive design */
+        /* Footer */
+        .footer { background: #1a202c; color: #a0aec0; font: 12px 'Public Sans', sans-serif; padding: 24px 32px; text-align: center; letter-spacing: 0.25px; border-top: 2px solid #4a5568; }
+        .footer * { font-family: 'Public Sans', sans-serif !important; }
+        .footer div, .footer span { color: #a0aec0 !important; }
+        .footer strong { color: #e2e8f0 !important; font-weight: 600; }
+        .footer a:not(.btn-base):not(.btn-secondary) { color: #718096; text-decoration: underline; }
+        
+        /* Responsive */
         @media (max-width: 700px) {
             .hero-image { height: 220px !important; }
             .intro-section { padding: 24px 16px; text-align: center; }
@@ -405,26 +141,20 @@
         <main class="main-content" role="main" aria-label="Main news stories">
             <!-- Story 1 -->
             <article class="story-item" role="article" aria-labelledby="story1-headline" pardot-repeatable pardot-region>
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:100%;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td width="180" valign="top" style="padding-bottom:8px;">
-                            <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" style="display: block;">
-                                <img src="https://backend.xpn.org/app/uploads/2025/06/sadie-1-820x514.jpg" alt="Story 1 Image" style="width: 180px; aspect-ratio: 16/9; border-radius:6px; object-fit:cover; display:block;" />
+                        <td width="180" valign="top">
+                            <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" style="display:block;">
+                                <img src="https://backend.xpn.org/app/uploads/2025/06/sadie-1-820x514.jpg" alt="Sadie Gust" style="width:180px; aspect-ratio:16/9; border-radius:6px; object-fit:cover; display:block;" />
                             </a>
-                            <div style="margin-top:12px;">
-                                <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" class="btn-read-more">Read More</a>
-                            </div>
+                            <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" class="btn-read-more" style="margin-top:12px;">Read More</a>
                         </td>
-                        <td valign="top" style="padding-left:24px; text-align:left;">
-                            <div class="story-content" style="text-align:left;">
-                                <h2 id="story1-headline" class="headline-story" style="text-align:left; margin-bottom: 10px;">
-                                    <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" pardot-data="story1-headline" style="text-align:left; text-decoration: none;" class="text-primary">Sadie Gust Wins 24 Hour Song Challenge</a>
-                                </h2>
-                                <p class="excerpt-story" pardot-data="story1-excerpt" style="text-align:left; margin-bottom: 10px;">
-                                    After a month-long search, Sadie Gust, a local pop singer-songwriter, is named the 2025 grand prize winner for her haunting track "Split."
-                                </p>
-                                <div class="meta-text" pardot-data="story1-meta" style="text-align:left;">By Paige Walters | June 30, 2025</div>
-                            </div>
+                        <td valign="top" style="padding-left:24px;">
+                            <h2 id="story1-headline" class="headline-story" style="margin-bottom:10px;">
+                                <a href="https://xpn.org/2025/06/30/sadie-gust-24-hour-song-challenge-winner" pardot-data="story1-headline" style="text-decoration:none; color:#1a202c;">Sadie Gust Wins 24 Hour Song Challenge</a>
+                            </h2>
+                            <p class="excerpt-story" pardot-data="story1-excerpt" style="margin-bottom:10px;">After a month-long search, Sadie Gust, a local pop singer-songwriter, is named the 2025 grand prize winner for her haunting track "Split."</p>
+                            <div class="meta-text" pardot-data="story1-meta">By Paige Walters | June 30, 2025</div>
                         </td>
                     </tr>
                 </table>
@@ -432,26 +162,20 @@
 
             <!-- Story 2 -->
             <article class="story-item" role="article" aria-labelledby="story2-headline" pardot-repeatable pardot-region>
-                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:100%;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td width="180" valign="top" style="padding-bottom:8px;">
-                            <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" style="display: block;">
-                                <img src="https://backend.xpn.org/app/uploads/2025/06/Blondshell-Edited-116-820x514.jpg" alt="Story 2 Image" style="width: 180px; aspect-ratio: 16/9; border-radius:6px; object-fit:cover; display:block;" />
+                        <td width="180" valign="top">
+                            <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" style="display:block;">
+                                <img src="https://backend.xpn.org/app/uploads/2025/06/Blondshell-Edited-116-820x514.jpg" alt="Song Challenge Winner" style="width:180px; aspect-ratio:16/9; border-radius:6px; object-fit:cover; display:block;" />
                             </a>
-                            <div style="margin-top:12px;">
-                                <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" class="btn-read-more">Read More</a>
-                            </div>
+                            <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" class="btn-read-more" style="margin-top:12px;">Read More</a>
                         </td>
-                        <td valign="top" style="padding-left:24px; text-align:left;">
-                            <div class="story-content" style="text-align:left;">
-                                <h2 id="story2-headline" class="headline-story" style="text-align:left; margin-bottom: 10px;">
-                                    <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" pardot-data="story2-headline" style="text-align:left; text-decoration: none;" class="text-primary">24 Hour Song Challenge Winner Reveal: Sadie Gust</a>
-                                </h2>
-                                <p class="excerpt-story" pardot-data="story2-excerpt" style="text-align:left; margin-bottom: 10px;">
-                                    After a month-long search, we've found this year's winner of the 24 Hour Song Challenge, and we couldn't be more excited.
-                                </p>
-                                <div class="meta-text" pardot-data="story2-meta" style="text-align:left;">By WXPN | June 29, 2025</div>
-                            </div>
+                        <td valign="top" style="padding-left:24px;">
+                            <h2 id="story2-headline" class="headline-story" style="margin-bottom:10px;">
+                                <a href="https://xpn.org/2025/06/29/24-hour-song-challenge-winner-reveal" pardot-data="story2-headline" style="text-decoration:none; color:#1a202c;">24 Hour Song Challenge Winner Reveal: Sadie Gust</a>
+                            </h2>
+                            <p class="excerpt-story" pardot-data="story2-excerpt" style="margin-bottom:10px;">After a month-long search, we've found this year's winner of the 24 Hour Song Challenge, and we couldn't be more excited.</p>
+                            <div class="meta-text" pardot-data="story2-meta">By WXPN | June 29, 2025</div>
                         </td>
                     </tr>
                 </table>
@@ -459,58 +183,52 @@
 
             <!-- World Cafe Stories Section -->
             <section class="world-cafe-wrapper" role="region" aria-label="World Cafe stories">
-                <section class="world-cafe-section" pardot-region>
+                <div class="world-cafe-section" pardot-region>
                     <h3 class="world-cafe-title">Heard On World Cafe</h3>
+                    
                     <article class="world-cafe-story" role="article" aria-labelledby="wc-story1-headline" pardot-repeatable pardot-region>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:100%;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                                <td width="180" valign="top" style="padding-bottom:8px;">
-                                    <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" style="display: block;">
-                                        <img src="https://backend.xpn.org/app/uploads/2025/06/en-09_morricone-in-studio-a-p6s1zat8fjs0mrzw2sa1khfzqb4if3t2wjc7yszwv4_wide-fff87d68d81868c526cec95d7318bd5a32b3f43f-820x514.png" alt="World Cafe Story 1 Image" style="width: 180px; aspect-ratio: 16/9; border-radius:6px; object-fit:cover; display:block;" />
+                                <td width="180" valign="top">
+                                    <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" style="display:block;">
+                                        <img src="https://backend.xpn.org/app/uploads/2025/06/en-09_morricone-in-studio-a-p6s1zat8fjs0mrzw2sa1khfzqb4if3t2wjc7yszwv4_wide-fff87d68d81868c526cec95d7318bd5a32b3f43f-820x514.png" alt="Morricone Studio" style="width:180px; aspect-ratio:16/9; border-radius:6px; object-fit:cover; display:block;" />
                                     </a>
-                                    <div style="margin-top:8px;">
-                                        <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" class="btn-read-more btn-read-more-small">Read More</a>
-                                    </div>
+                                    <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" class="btn-read-more btn-read-more-small" style="margin-top:8px;">Read More</a>
                                 </td>
                                 <td valign="top" style="padding-left:16px;">
-                                    <div class="world-cafe-content">
-                                        <h4 id="wc-story1-headline" class="world-cafe-headline">
-                                            <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" pardot-data="wc-story1-headline">Sense of Place: Step inside the Roman studio where Ennio Morricone made magic</a>
-                                        </h4>
-                                        <p class="world-cafe-excerpt" pardot-data="wc-story1-excerpt">Some of the Italian composer's most memorable film scores were recorded at Forum Studios in Rome's Parioli neighborhood.</p>
-                                        <div class="world-cafe-meta" pardot-data="wc-story1-meta">By Raina Douris | June 28, 2025</div>
-                                    </div>
+                                    <h4 id="wc-story1-headline" class="world-cafe-headline">
+                                        <a href="https://xpn.org/2025/06/28/sense-of-place-morricone-studio-rome" pardot-data="wc-story1-headline">Sense of Place: Step inside the Roman studio where Ennio Morricone made magic</a>
+                                    </h4>
+                                    <p class="world-cafe-excerpt" pardot-data="wc-story1-excerpt">Some of the Italian composer's most memorable film scores were recorded at Forum Studios in Rome's Parioli neighborhood.</p>
+                                    <div class="meta-text" pardot-data="wc-story1-meta">By Raina Douris | June 28, 2025</div>
                                 </td>
                             </tr>
                         </table>
                     </article>
+                    
                     <article class="world-cafe-story" role="article" aria-labelledby="wc-story2-headline" pardot-repeatable pardot-region>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:100%;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
                             <tr>
-                                <td width="180" valign="top" style="padding-bottom:8px;">
-                                    <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" style="display: block;">
-                                        <img src="https://backend.xpn.org/app/uploads/2025/06/image008-146250-_wide-c60991128e05ab48b4a4496a4f82855d4bb06a73-820x514.jpg" alt="World Cafe Story 2 Image" style="width: 180px; aspect-ratio: 16/9; border-radius:6px; object-fit:cover; display:block;" />
+                                <td width="180" valign="top">
+                                    <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" style="display:block;">
+                                        <img src="https://backend.xpn.org/app/uploads/2025/06/image008-146250-_wide-c60991128e05ab48b4a4496a4f82855d4bb06a73-820x514.jpg" alt="Ludovico Einaudi" style="width:180px; aspect-ratio:16/9; border-radius:6px; object-fit:cover; display:block;" />
                                     </a>
-                                    <div style="margin-top:8px;">
-                                        <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" class="btn-read-more btn-read-more-small">Read More</a>
-                                    </div>
+                                    <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" class="btn-read-more btn-read-more-small" style="margin-top:8px;">Read More</a>
                                 </td>
                                 <td valign="top" style="padding-left:16px;">
-                                    <div class="world-cafe-content">
-                                        <h4 id="wc-story2-headline" class="world-cafe-headline">
-                                            <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" pardot-data="wc-story2-headline">Sense of Place: Ludovico Einaudi is one of the most streamed composers of all time</a>
-                                        </h4>
-                                        <p class="world-cafe-excerpt" pardot-data="wc-story2-excerpt">The Italian pianist and composer returns to his childhood in Turin on his latest album, The Summer Portraits.</p>
-                                        <div class="world-cafe-meta" pardot-data="wc-story2-meta">By Bruce Warren | June 27, 2025</div>
-                                    </div>
+                                    <h4 id="wc-story2-headline" class="world-cafe-headline">
+                                        <a href="https://xpn.org/2025/06/27/ludovico-einaudi-summer-portraits" pardot-data="wc-story2-headline">Sense of Place: Ludovico Einaudi is one of the most streamed composers of all time</a>
+                                    </h4>
+                                    <p class="world-cafe-excerpt" pardot-data="wc-story2-excerpt">The Italian pianist and composer returns to his childhood in Turin on his latest album, The Summer Portraits.</p>
+                                    <div class="meta-text" pardot-data="wc-story2-meta">By Bruce Warren | June 27, 2025</div>
                                 </td>
                             </tr>
                         </table>
                     </article>
-                </section>
+                </div>
             </section>
 
-            <!-- Enhanced Concerts Section -->
+            <!-- Concerts Section -->
             <div class="concerts-section" pardot-region style="margin-bottom: 40px; border: 2px solid #4a5568; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 <h2 class="concerts-title" pardot-data="concerts-section-title">Upcoming Shows</h2>
                 <div>
@@ -544,111 +262,92 @@
             </div>
 
             <!-- YouTube Video Highlights Section -->
-            <div class="youtube-section" pardot-region style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 24px 20px 24px 20px; margin: -16px 0 0 0; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <div style="text-align: center; margin-bottom: 20px;">
-                    <h2 style="font-size: 28px; font-weight: 900; color: #a5494c; margin: 0 0 6px 0; letter-spacing: 0.5px; font-family: 'Lora', Georgia, serif;">Watch the Latest Videos</h2>
-                    <div style="font-size: 14px; color: #718096; font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif; letter-spacing: 1px; font-weight: 600;">From WXPN And World Cafe</div>
+            <div class="youtube-section" pardot-region style="background:linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding:24px 20px; margin:-16px 0 0 0; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+                <div style="text-align:center; margin-bottom:20px;">
+                    <h2 style="font:900 28px 'Lora',serif; color:#a5494c; margin:0 0 6px 0; letter-spacing:0.5px;">Watch the Latest Videos</h2>
+                    <div style="font:600 14px 'Public Sans',sans-serif; color:#718096; letter-spacing:1px;">From WXPN And World Cafe</div>
                 </div>
 
-                <!-- Video Entry 1 -->
-                <div pardot-repeatable pardot-region style="background: #ffffff; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 12px; overflow: hidden; transition: all 0.3s ease;">
+                <!-- Video Entry -->
+                <div pardot-repeatable pardot-region style="background:#fff; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.1); margin-bottom:12px; overflow:hidden;">
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
-                            <td width="200" align="center" valign="top" style="padding: 16px;">
-                                <a href="https://www.youtube.com/watch?v=2YTdNVBB8uk" style="display: block; position: relative;">
-                                    <img src="https://img.youtube.com/vi/2YTdNVBB8uk/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius: 10px; object-fit: cover; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(219, 64, 67, 0.9); color: white; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
+                            <td width="200" valign="top" style="padding:16px;">
+                                <a href="https://www.youtube.com/watch?v=2YTdNVBB8uk" style="display:block; position:relative;">
+                                    <img src="https://img.youtube.com/vi/2YTdNVBB8uk/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
-                            <td valign="top" style="padding: 16px 20px 16px 12px;">
-                                <div style="text-align: left;">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #1a202c; margin: 0 0 6px 0; line-height: 1.3; font-family: 'Lora', Georgia, serif;">
-                                        <a href="https://www.youtube.com/watch?v=2YTdNVBB8uk" style="color: #1a202c; text-decoration: none;">Orla Gartland - "Late To The Party"</a>
-                                    </h3>
-                                    <p style="font-size: 14px; color: #4a5568; margin: 0; line-height: 1.5; font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;">The Irish singer-songwriter delivers an intimate acoustic performance of her breakout hit at WXPN's annual Non-Commvention music conference.</p>
-                                </div>
+                            <td valign="top" style="padding:16px 20px 16px 12px;">
+                                <h3 style="font:700 16px 'Lora',serif; color:#1a202c; margin:0 0 6px 0; line-height:1.3;">
+                                    <a href="https://www.youtube.com/watch?v=2YTdNVBB8uk" pardot-data="video1-title" style="color:#1a202c; text-decoration:none;">Orla Gartland - "Late To The Party"</a>
+                                </h3>
+                                <p pardot-data="video1-description" style="font:14px 'Public Sans',sans-serif; color:#4a5568; margin:0; line-height:1.5;">The Irish singer-songwriter delivers an intimate acoustic performance of her breakout hit at WXPN's annual Non-Commvention music conference.</p>
                             </td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Video Entry 2 -->
-                <div pardot-repeatable pardot-region style="background: #ffffff; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 12px; overflow: hidden; transition: all 0.3s ease;">
+                <div pardot-repeatable pardot-region style="background:#fff; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.1); margin-bottom:12px; overflow:hidden;">
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
-                            <td width="200" align="center" valign="top" style="padding: 16px;">
-                                <a href="https://www.youtube.com/watch?v=_uwAs7gf5E0" style="display: block; position: relative;">
-                                    <img src="https://img.youtube.com/vi/_uwAs7gf5E0/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius: 10px; object-fit: cover; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(219, 64, 67, 0.9); color: white; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
+                            <td width="200" valign="top" style="padding:16px;">
+                                <a href="https://www.youtube.com/watch?v=_uwAs7gf5E0" style="display:block; position:relative;">
+                                    <img src="https://img.youtube.com/vi/_uwAs7gf5E0/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
-                            <td valign="top" style="padding: 16px 20px 16px 12px;">
-                                <div style="text-align: left;">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #1a202c; margin: 0 0 6px 0; line-height: 1.3; font-family: 'Lora', Georgia, serif;">
-                                        <a href="https://www.youtube.com/watch?v=_uwAs7gf5E0" style="color: #1a202c; text-decoration: none;">The Kooks play 'Naive' and more on Midday with Mike V</a>
-                                    </h3>
-                                    <p style="font-size: 14px; color: #4a5568; margin: 0; line-height: 1.5; font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;">The British indie rock band delivers a spirited performance of their hit single plus other fan favorites on WXPN's midday show.</p>
-                                </div>
+                            <td valign="top" style="padding:16px 20px 16px 12px;">
+                                <h3 style="font:700 16px 'Lora',serif; color:#1a202c; margin:0 0 6px 0; line-height:1.3;">
+                                    <a href="https://www.youtube.com/watch?v=_uwAs7gf5E0" pardot-data="video2-title" style="color:#1a202c; text-decoration:none;">The Kooks play 'Naive' and more on Midday with Mike V</a>
+                                </h3>
+                                <p pardot-data="video2-description" style="font:14px 'Public Sans',sans-serif; color:#4a5568; margin:0; line-height:1.5;">The British indie rock band delivers a spirited performance of their hit single plus other fan favorites on WXPN's midday show.</p>
                             </td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Video Entry 3 -->
-                <div pardot-repeatable pardot-region style="background: #ffffff; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 12px; overflow: hidden; transition: all 0.3s ease;">
+                <div pardot-repeatable pardot-region style="background:#fff; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.1); margin-bottom:12px; overflow:hidden;">
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
-                            <td width="200" align="center" valign="top" style="padding: 16px;">
-                                <a href="https://www.youtube.com/watch?v=DUiiZhHbXqU" style="display: block; position: relative;">
-                                    <img src="https://img.youtube.com/vi/DUiiZhHbXqU/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius: 10px; object-fit: cover; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(219, 64, 67, 0.9); color: white; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
+                            <td width="200" valign="top" style="padding:16px;">
+                                <a href="https://www.youtube.com/watch?v=DUiiZhHbXqU" style="display:block; position:relative;">
+                                    <img src="https://img.youtube.com/vi/DUiiZhHbXqU/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
-                            <td valign="top" style="padding: 16px 20px 16px 12px;">
-                                <div style="text-align: left;">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #1a202c; margin: 0 0 6px 0; line-height: 1.3; font-family: 'Lora', Georgia, serif;">
-                                        <a href="https://www.youtube.com/watch?v=DUiiZhHbXqU" style="color: #1a202c; text-decoration: none;">KulfiGirls: Full Set (The Key Studio Sessions)</a>
-                                    </h3>
-                                    <p style="font-size: 14px; color: #4a5568; margin: 0; line-height: 1.5; font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;">Watch the full performance from this dynamic duo's intimate session at WXPN's recording studio.</p>
-                                </div>
+                            <td valign="top" style="padding:16px 20px 16px 12px;">
+                                <h3 style="font:700 16px 'Lora',serif; color:#1a202c; margin:0 0 6px 0; line-height:1.3;">
+                                    <a href="https://www.youtube.com/watch?v=DUiiZhHbXqU" pardot-data="video3-title" style="color:#1a202c; text-decoration:none;">KulfiGirls: Full Set (The Key Studio Sessions)</a>
+                                </h3>
+                                <p pardot-data="video3-description" style="font:14px 'Public Sans',sans-serif; color:#4a5568; margin:0; line-height:1.5;">Watch the full performance from this dynamic duo's intimate session at WXPN's recording studio.</p>
                             </td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Video Entry 4 -->
-                <div pardot-repeatable pardot-region style="background: #ffffff; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); margin-bottom: 0; overflow: hidden; transition: all 0.3s ease;">
+                <div pardot-repeatable pardot-region style="background:#fff; border-radius:12px; box-shadow:0 3px 15px rgba(0,0,0,0.1); margin-bottom:0; overflow:hidden;">
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                         <tr>
-                            <td width="200" align="center" valign="top" style="padding: 16px;">
-                                <a href="https://www.youtube.com/watch?v=CyyuGcd8tzI" style="display: block; position: relative;">
-                                    <img src="https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius: 10px; object-fit: cover; display: block; box-shadow: 0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(219, 64, 67, 0.9); color: white; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z"/>
-                                        </svg>
+                            <td width="200" valign="top" style="padding:16px;">
+                                <a href="https://www.youtube.com/watch?v=CyyuGcd8tzI" style="display:block; position:relative;">
+                                    <img src="https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
-                            <td valign="top" style="padding: 16px 20px 16px 12px;">
-                                <div style="text-align: left;">
-                                    <h3 style="font-size: 16px; font-weight: 700; color: #1a202c; margin: 0 0 6px 0; line-height: 1.3; font-family: 'Lora', Georgia, serif;">
-                                        <a href="https://www.youtube.com/watch?v=CyyuGcd8tzI" style="color: #1a202c; text-decoration: none;">Laila al Habash on World Cafe - Sense of Place: Rome</a>
-                                    </h3>
-                                    <p style="font-size: 14px; color: #4a5568; margin: 0; line-height: 1.5; font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif;">Laila al Habash performs for a World Cafe Session with host, Raina Douris. Recorded at Studio 33 in Rome, Italy on 04.02.2025.</p>
-                                </div>
+                            <td valign="top" style="padding:16px 20px 16px 12px;">
+                                <h3 style="font:700 16px 'Lora',serif; color:#1a202c; margin:0 0 6px 0; line-height:1.3;">
+                                    <a href="https://www.youtube.com/watch?v=CyyuGcd8tzI" pardot-data="video4-title" style="color:#1a202c; text-decoration:none;">Laila al Habash on World Cafe - Sense of Place: Rome</a>
+                                </h3>
+                                <p pardot-data="video4-description" style="font:14px 'Public Sans',sans-serif; color:#4a5568; margin:0; line-height:1.5;">Laila al Habash performs for a World Cafe Session with host, Raina Douris. Recorded at Studio 33 in Rome, Italy on 04.02.2025.</p>
                             </td>
                         </tr>
                     </table>
@@ -658,40 +357,40 @@
         </main>
         
         <!-- Author Box -->
-        <section class="author-box" pardot-region style="background: #f8fafc; padding: 20px 32px; margin: 0; border-top: 1px solid #e2e8f0;">
-            <div style="max-width: 600px; margin: 0 auto;">
+        <section class="author-box" pardot-region style="background:#f8fafc; padding:20px 32px; border-top:1px solid #e2e8f0;">
+            <div style="max-width:600px; margin:0 auto;">
                 <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td width="100" align="left" valign="middle" style="padding-right: 20px;">
-                            <img src="https://media.npr.org/assets/img/2018/01/15/john_vettese_credit_joe_del_tufo_sq-474e71af20be871d715d3072c32f78bd43a89afc.jpg?s=300&c=85&f=jpeg" alt="John Vettese" width="80" height="80" style="border-radius: 50%; border: 2px solid #a4484c; object-fit: cover; display: block;" />
+                        <td width="100" valign="middle" style="padding-right:20px;">
+                            <img src="https://media.npr.org/assets/img/2018/01/15/john_vettese_credit_joe_del_tufo_sq-474e71af20be871d715d3072c32f78bd43a89afc.jpg?s=300&c=85&f=jpeg" alt="John Vettese" width="80" height="80" style="border-radius:50%; border:2px solid #a4484c; object-fit:cover; display:block;" />
                         </td>
-                        <td valign="middle" style="text-align: left;">
-                            <div style="font-family: 'Lora', Georgia, serif; font-size: 18px; font-weight: 700; color: #1a202c; margin-bottom: 2px; line-height: 1.2;">John Vettese</div>
-                            <div style="font-family: 'Public Sans', 'Inter', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-weight: 500; color: #4a5568; line-height: 1.3;">Digital Editor and Host of WXPN Local</div>
+                        <td valign="middle">
+                            <div style="font:700 18px 'Lora',serif; color:#1a202c; margin-bottom:2px; line-height:1.2;">John Vettese</div>
+                            <div style="font:500 14px 'Public Sans',sans-serif; color:#4a5568; line-height:1.3;">Digital Editor and Host of WXPN Local</div>
                         </td>
                     </tr>
                 </table>
             </div>
         </section>
         
-        <!-- Footer Section -->
+        <!-- Footer -->
         <footer class="footer" pardot-region>
             <div style="max-width:600px; margin:0 auto; text-align:center;">
                 <div style="margin-bottom:18px; font-size:14px; line-height:1.6;">
                     The WXPN Top Stories Newsletter and the content featured on our website are made possible with support from WXPN Members.
                 </div>
                 <a href="https://xpn.org/membership/?utm_source=newsletter&utm_medium=email&utm_campaign=top_stories&utm_content=footer" class="btn-base btn-secondary" style="padding:10px 28px; border-radius:25px; font-size:15px; font-weight:700; margin-bottom:22px; text-transform:none;">Become a Member</a>
+                
                 <div style="margin-top:24px;">
-                    <span style="font-size:13px; font-weight:600; letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:8px;">Follow us</span>
-                    <span style="display:block; margin-bottom:20px;">
-                        <a href="https://facebook.com/wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="26" height="26" style="vertical-align:middle; filter: invert(1) brightness(1.5);" /></a>
-                        <a href="https://instagram.com/wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="26" height="26" style="vertical-align:middle; filter: invert(1) brightness(1.5);" /></a>
-                        <a href="https://tiktok.com/@wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="TikTok"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" width="26" height="26" style="vertical-align:middle; filter: invert(1) brightness(1.5);" /></a>
-                        <a href="https://bsky.app/profile/wxpnfm.bsky.social" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Bluesky"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Bluesky" width="26" height="26" style="vertical-align:middle; filter: invert(1) brightness(1.5);" /></a>
-                    </span>
+                    <span style="font:600 13px 'Public Sans',sans-serif; letter-spacing:0.5px; text-transform:uppercase; display:block; margin-bottom:8px;">Follow us</span>
+                    <div style="margin-bottom:20px;">
+                        <a href="https://facebook.com/wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="26" height="26" style="vertical-align:middle; filter:invert(1) brightness(1.5);" /></a>
+                        <a href="https://instagram.com/wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="26" height="26" style="vertical-align:middle; filter:invert(1) brightness(1.5);" /></a>
+                        <a href="https://tiktok.com/@wxpnfm" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="TikTok"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" width="26" height="26" style="vertical-align:middle; filter:invert(1) brightness(1.5);" /></a>
+                        <a href="https://bsky.app/profile/wxpnfm.bsky.social" style="margin:0 10px; text-decoration:none; display:inline-block;" aria-label="Bluesky"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Bluesky" width="26" height="26" style="vertical-align:middle; filter:invert(1) brightness(1.5);" /></a>
+                    </div>
                 </div>
                 
-                <!-- Contact Information -->
                 <div style="border-top:1px solid #2d3748; padding-top:20px; margin-top:20px;">
                     <div style="font-size:12px; line-height:1.5; margin-bottom:12px;">
                         <strong>Our mailing address is:</strong><br>
@@ -702,9 +401,7 @@
                     <div style="font-size:11px; margin-bottom:8px;">
                         <a href="#" style="color:#718096; text-decoration:underline;">Update subscription preferences</a>
                     </div>
-                    <div style="font-size:11px;">
-                        Copyright © 2025, All rights reserved.
-                    </div>
+                    <div style="font-size:11px;">Copyright © 2025, All rights reserved.</div>
                 </div>
             </div>
         </footer>

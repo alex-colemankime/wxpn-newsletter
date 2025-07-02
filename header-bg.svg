@@ -1,7 +1,7 @@
-<svg width="1440" height="320" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Main background gradient with muted, dusty colors -->
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="1440" y2="320" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="800" y2="200" gradientUnits="userSpaceOnUse">
       <stop stop-color="#8b4a47"/>
       <stop offset="0.25" stop-color="#a4484c"/>
       <stop offset="0.5" stop-color="#a0594d"/>
@@ -9,11 +9,23 @@
       <stop offset="1" stop-color="#d4a07a"/>
     </linearGradient>
     
-    <!-- Texture overlay for dusty effect -->
-    <pattern id="texture" patternUnits="userSpaceOnUse" width="4" height="4">
-      <rect width="4" height="4" fill="#000" fill-opacity="0.02"/>
-      <circle cx="1" cy="1" r="0.5" fill="#fff" fill-opacity="0.03"/>
-      <circle cx="3" cy="3" r="0.3" fill="#000" fill-opacity="0.01"/>
+    <!-- Enhanced texture overlay for dusty effect -->
+    <pattern id="texture" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#000" fill-opacity="0.03"/>
+      <circle cx="2" cy="2" r="0.8" fill="#fff" fill-opacity="0.04"/>
+      <circle cx="6" cy="6" r="0.6" fill="#000" fill-opacity="0.02"/>
+      <circle cx="1" cy="5" r="0.4" fill="#fff" fill-opacity="0.025"/>
+      <circle cx="7" cy="1" r="0.3" fill="#000" fill-opacity="0.015"/>
+      <rect x="0" y="3" width="1" height="1" fill="#fff" fill-opacity="0.02"/>
+      <rect x="4" y="0" width="1" height="1" fill="#000" fill-opacity="0.01"/>
+      <rect x="3" y="7" width="1" height="1" fill="#fff" fill-opacity="0.015"/>
+    </pattern>
+    
+    <!-- Additional noise texture -->
+    <pattern id="noise" patternUnits="userSpaceOnUse" width="2" height="2">
+      <rect width="2" height="2" fill="#000" fill-opacity="0.01"/>
+      <rect x="0" y="0" width="1" height="1" fill="#fff" fill-opacity="0.02"/>
+      <rect x="1" y="1" width="1" height="1" fill="#000" fill-opacity="0.008"/>
     </pattern>
     
     <!-- Subtle radial gradients for depth -->
@@ -28,35 +40,268 @@
     </radialGradient>
     <!-- Waveform gradient -->
     <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d4a07a" stop-opacity="0.3"/>
-      <stop offset="25%" stop-color="#c08170" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#a4484c" stop-opacity="0.7"/>
-      <stop offset="75%" stop-color="#8b4a47" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#d4a07a" stop-opacity="0.3"/>
+      <stop offset="0%" stop-color="#d4a07a" stop-opacity="0.4"/>
+      <stop offset="25%" stop-color="#c08170" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#a4484c" stop-opacity="0.8"/>
+      <stop offset="75%" stop-color="#8b4a47" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d4a07a" stop-opacity="0.4"/>
     </linearGradient>
   </defs>
   
   <!-- Base gradient background -->
-  <rect width="1440" height="320" fill="url(#bgGrad)"/>
+  <rect width="800" height="200" fill="url(#bgGrad)"/>
   
   <!-- Texture overlay -->
-  <rect width="1440" height="320" fill="url(#texture)"/>
+  <rect width="800" height="200" fill="url(#texture)"/>
+  
+  <!-- Additional noise layer -->
+  <rect width="800" height="200" fill="url(#noise)"/>
   
   <!-- Subtle depth elements -->
-  <ellipse cx="1000" cy="130" rx="350" ry="60" fill="url(#rad1)"/>
-  <ellipse cx="350" cy="220" rx="250" ry="50" fill="url(#rad2)"/>
+  <ellipse cx="560" cy="80" rx="200" ry="35" fill="url(#rad1)"/>
+  <ellipse cx="200" cy="130" rx="140" ry="30" fill="url(#rad2)"/>
   
-  <!-- Audio waveform spanning most of header width -->
-  <g opacity="0.25">
-    <!-- Main waveform with gradient -->
-    <path d="M80,160 L90,140 L100,180 L110,120 L120,200 L130,100 L140,220 L150,80 L160,240 L170,60 L180,260 L190,40 L200,280 L210,160 L220,150 L230,170 L240,140 L250,180 L260,130 L270,190 L280,125 L290,195 L300,120 L310,200 L320,115 L330,205 L340,110 L350,210 L360,105 L370,215 L380,100 L390,220 L400,95 L410,225 L420,90 L430,230 L440,85 L450,235 L460,80 L470,240 L480,75 L490,245 L500,70 L510,250 L520,65 L530,255 L540,60 L550,260 L560,55 L570,265 L580,50 L590,270 L600,45 L610,275 L620,40 L630,280 L640,160 L650,150 L660,170 L670,140 L680,180 L690,130 L700,190 L710,125 L720,195 L730,120 L740,200 L750,115 L760,205 L770,110 L780,210 L790,105 L800,215 L810,100 L820,220 L830,95 L840,225 L850,90 L860,230 L870,85 L880,235 L890,80 L900,240 L910,75 L920,245 L930,70 L940,250 L950,65 L960,255 L970,60 L980,260 L990,55 L1000,265 L1010,50 L1020,270 L1030,45 L1040,275 L1050,40 L1060,280 L1070,160 L1080,150 L1090,170 L1100,140 L1110,180 L1120,130 L1130,190 L1140,125 L1150,195 L1160,120 L1170,200 L1180,115 L1190,205 L1200,110 L1210,210 L1220,105 L1230,215 L1240,100 L1250,220 L1260,95 L1270,225 L1280,90 L1290,230 L1300,85 L1310,235 L1320,80 L1330,240 L1340,75 L1350,245 L1360,160" 
-          stroke="url(#waveGrad)" stroke-width="4" fill="none"/>
-    
-    <!-- Secondary layer for depth -->
-    <path d="M80,180 L95,175 L110,185 L125,170 L140,190 L155,165 L170,195 L185,160 L200,200 L215,155 L230,205 L245,150 L260,210 L275,145 L290,215 L305,140 L320,220 L335,135 L350,225 L365,130 L380,230 L395,125 L410,235 L425,120 L440,240 L455,115 L470,245 L485,110 L500,250 L515,105 L530,255 L545,100 L560,260 L575,95 L590,265 L605,90 L620,270 L635,85 L650,275 L665,80 L680,280 L695,160 L710,170 L725,150 L740,180 L755,140 L770,190 L785,130 L800,200 L815,120 L830,210 L845,110 L860,220 L875,100 L890,230 L905,90 L920,240 L935,80 L950,250 L965,70 L980,260 L995,60 L1010,270 L1025,50 L1040,280 L1055,160 L1070,170 L1085,150 L1100,180 L1115,140 L1130,190 L1145,130 L1160,200 L1175,120 L1190,210 L1205,110 L1220,220 L1235,100 L1250,230 L1265,90 L1280,240 L1295,80 L1310,250 L1325,70 L1340,260 L1355,160 L1360,170" 
-          stroke="#c08170" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- Realistic audio waveform positioned lower to accent text rather than clash -->
+  <g opacity="0.45" transform="translate(50, 25)">
+    <!-- Tightly packed waveform bars like real audio visualization -->
+    <g fill="url(#waveGrad)">
+      <rect x="0" y="115" width="1.5" height="10"/>
+      <rect x="3" y="108" width="1.5" height="24"/>
+      <rect x="6" y="120" width="1.5" height="5"/>
+      <rect x="9" y="102" width="1.5" height="36"/>
+      <rect x="12" y="110" width="1.5" height="20"/>
+      <rect x="15" y="105" width="1.5" height="30"/>
+      <rect x="18" y="118" width="1.5" height="9"/>
+      <rect x="21" y="95" width="1.5" height="50"/>
+      <rect x="24" y="112" width="1.5" height="16"/>
+      <rect x="27" y="108" width="1.5" height="24"/>
+      <rect x="30" y="116" width="1.5" height="8"/>
+      <rect x="33" y="98" width="1.5" height="44"/>
+      <rect x="36" y="114" width="1.5" height="12"/>
+      <rect x="39" y="106" width="1.5" height="28"/>
+      <rect x="42" y="119" width="1.5" height="6"/>
+      <rect x="45" y="100" width="1.5" height="40"/>
+      <rect x="48" y="113" width="1.5" height="14"/>
+      <rect x="51" y="107" width="1.5" height="26"/>
+      <rect x="54" y="117" width="1.5" height="8"/>
+      <rect x="57" y="92" width="1.5" height="56"/>
+      <rect x="60" y="111" width="1.5" height="18"/>
+      <rect x="63" y="109" width="1.5" height="22"/>
+      <rect x="66" y="115" width="1.5" height="10"/>
+      <rect x="69" y="96" width="1.5" height="48"/>
+      <rect x="72" y="118" width="1.5" height="7"/>
+      <rect x="75" y="104" width="1.5" height="32"/>
+      <rect x="78" y="116" width="1.5" height="8"/>
+      <rect x="81" y="103" width="1.5" height="34"/>
+      <rect x="84" y="114" width="1.5" height="12"/>
+      <rect x="87" y="108" width="1.5" height="24"/>
+      <rect x="90" y="119" width="1.5" height="6"/>
+      <rect x="93" y="99" width="1.5" height="42"/>
+      <rect x="96" y="112" width="1.5" height="16"/>
+      <rect x="99" y="106" width="1.5" height="28"/>
+      <rect x="102" y="117" width="1.5" height="8"/>
+      <rect x="105" y="94" width="1.5" height="52"/>
+      <rect x="108" y="115" width="1.5" height="10"/>
+      <rect x="111" y="107" width="1.5" height="26"/>
+      <rect x="114" y="118" width="1.5" height="7"/>
+      <rect x="117" y="101" width="1.5" height="38"/>
+      <rect x="120" y="113" width="1.5" height="14"/>
+      <rect x="123" y="109" width="1.5" height="22"/>
+      <rect x="126" y="116" width="1.5" height="8"/>
+      <rect x="129" y="97" width="1.5" height="46"/>
+      <rect x="132" y="114" width="1.5" height="12"/>
+      <rect x="135" y="108" width="1.5" height="24"/>
+      <rect x="138" y="119" width="1.5" height="6"/>
+      <rect x="141" y="105" width="1.5" height="30"/>
+      <rect x="144" y="117" width="1.5" height="8"/>
+      <rect x="147" y="102" width="1.5" height="36"/>
+      <rect x="150" y="115" width="1.5" height="10"/>
+      <rect x="153" y="104" width="1.5" height="32"/>
+      <rect x="156" y="118" width="1.5" height="7"/>
+      <rect x="159" y="93" width="1.5" height="54"/>
+      <rect x="162" y="111" width="1.5" height="18"/>
+      <rect x="165" y="106" width="1.5" height="28"/>
+      <rect x="168" y="116" width="1.5" height="8"/>
+      <rect x="171" y="98" width="1.5" height="44"/>
+      <rect x="174" y="114" width="1.5" height="12"/>
+      <rect x="177" y="109" width="1.5" height="22"/>
+      <rect x="180" y="119" width="1.5" height="6"/>
+      <rect x="183" y="100" width="1.5" height="40"/>
+      <rect x="186" y="112" width="1.5" height="16"/>
+      <rect x="189" y="107" width="1.5" height="26"/>
+      <rect x="192" y="117" width="1.5" height="8"/>
+      <rect x="195" y="95" width="1.5" height="50"/>
+      <rect x="198" y="115" width="1.5" height="10"/>
+      <rect x="201" y="108" width="1.5" height="24"/>
+      <rect x="204" y="118" width="1.5" height="7"/>
+      <rect x="207" y="103" width="1.5" height="34"/>
+      <rect x="210" y="116" width="1.5" height="8"/>
+      <rect x="213" y="105" width="1.5" height="30"/>
+      <rect x="216" y="113" width="1.5" height="14"/>
+      <rect x="219" y="109" width="1.5" height="22"/>
+      <rect x="222" y="119" width="1.5" height="6"/>
+      <rect x="225" y="96" width="1.5" height="48"/>
+      <rect x="228" y="114" width="1.5" height="12"/>
+      <rect x="231" y="106" width="1.5" height="28"/>
+      <rect x="234" y="117" width="1.5" height="8"/>
+      <rect x="237" y="91" width="1.5" height="58"/>
+      <rect x="240" y="111" width="1.5" height="18"/>
+      <rect x="243" y="108" width="1.5" height="24"/>
+      <rect x="246" y="118" width="1.5" height="7"/>
+      <rect x="249" y="104" width="1.5" height="32"/>
+      <rect x="252" y="115" width="1.5" height="10"/>
+      <rect x="255" y="107" width="1.5" height="26"/>
+      <rect x="258" y="119" width="1.5" height="6"/>
+      <rect x="261" y="99" width="1.5" height="42"/>
+      <rect x="264" y="112" width="1.5" height="16"/>
+      <rect x="267" y="106" width="1.5" height="28"/>
+      <rect x="270" y="116" width="1.5" height="8"/>
+      <rect x="273" y="102" width="1.5" height="36"/>
+      <rect x="276" y="114" width="1.5" height="12"/>
+      <rect x="279" y="109" width="1.5" height="22"/>
+      <rect x="282" y="118" width="1.5" height="7"/>
+      <rect x="285" y="97" width="1.5" height="46"/>
+      <rect x="288" y="115" width="1.5" height="10"/>
+      <rect x="291" y="108" width="1.5" height="24"/>
+      <rect x="294" y="119" width="1.5" height="6"/>
+      <rect x="297" y="105" width="1.5" height="30"/>
+      <rect x="300" y="117" width="1.5" height="8"/>
+      <rect x="303" y="103" width="1.5" height="34"/>
+      <rect x="306" y="113" width="1.5" height="14"/>
+      <rect x="309" y="107" width="1.5" height="26"/>
+      <rect x="312" y="118" width="1.5" height="7"/>
+      <rect x="315" y="94" width="1.5" height="52"/>
+      <rect x="318" y="112" width="1.5" height="16"/>
+      <rect x="321" y="106" width="1.5" height="28"/>
+      <rect x="324" y="116" width="1.5" height="8"/>
+      <rect x="327" y="100" width="1.5" height="40"/>
+      <rect x="330" y="114" width="1.5" height="12"/>
+      <rect x="333" y="109" width="1.5" height="22"/>
+      <rect x="336" y="119" width="1.5" height="6"/>
+      <rect x="339" y="98" width="1.5" height="44"/>
+      <rect x="342" y="115" width="1.5" height="10"/>
+      <rect x="345" y="108" width="1.5" height="24"/>
+      <rect x="348" y="117" width="1.5" height="8"/>
+      <rect x="351" y="101" width="1.5" height="38"/>
+      <rect x="354" y="113" width="1.5" height="14"/>
+      <rect x="357" y="107" width="1.5" height="26"/>
+      <rect x="360" y="118" width="1.5" height="7"/>
+      <rect x="363" y="95" width="1.5" height="50"/>
+      <rect x="366" y="111" width="1.5" height="18"/>
+      <rect x="369" y="106" width="1.5" height="28"/>
+      <rect x="372" y="116" width="1.5" height="8"/>
+      <rect x="375" y="92" width="1.5" height="56"/>
+      <rect x="378" y="114" width="1.5" height="12"/>
+      <rect x="381" y="109" width="1.5" height="22"/>
+      <rect x="384" y="119" width="1.5" height="6"/>
+      <rect x="387" y="104" width="1.5" height="32"/>
+      <rect x="390" y="117" width="1.5" height="8"/>
+      <rect x="393" y="105" width="1.5" height="30"/>
+      <rect x="396" y="112" width="1.5" height="16"/>
+      <rect x="399" y="108" width="1.5" height="24"/>
+      <rect x="402" y="118" width="1.5" height="7"/>
+      <rect x="405" y="96" width="1.5" height="48"/>
+      <rect x="408" y="115" width="1.5" height="10"/>
+      <rect x="411" y="107" width="1.5" height="26"/>
+      <rect x="414" y="119" width="1.5" height="6"/>
+      <rect x="417" y="103" width="1.5" height="34"/>
+      <rect x="420" y="113" width="1.5" height="14"/>
+      <rect x="423" y="106" width="1.5" height="28"/>
+      <rect x="426" y="116" width="1.5" height="8"/>
+      <rect x="429" y="99" width="1.5" height="42"/>
+      <rect x="432" y="114" width="1.5" height="12"/>
+      <rect x="435" y="109" width="1.5" height="22"/>
+      <rect x="438" y="118" width="1.5" height="7"/>
+      <rect x="441" y="102" width="1.5" height="36"/>
+      <rect x="444" y="116" width="1.5" height="8"/>
+      <rect x="447" y="104" width="1.5" height="32"/>
+      <rect x="450" y="111" width="1.5" height="18"/>
+      <rect x="453" y="108" width="1.5" height="24"/>
+      <rect x="456" y="119" width="1.5" height="6"/>
+      <rect x="459" y="93" width="1.5" height="54"/>
+      <rect x="462" y="115" width="1.5" height="10"/>
+      <rect x="465" y="107" width="1.5" height="26"/>
+      <rect x="468" y="117" width="1.5" height="8"/>
+      <rect x="471" y="100" width="1.5" height="40"/>
+      <rect x="474" y="112" width="1.5" height="16"/>
+      <rect x="477" y="106" width="1.5" height="28"/>
+      <rect x="480" y="118" width="1.5" height="7"/>
+      <rect x="483" y="97" width="1.5" height="46"/>
+      <rect x="486" y="114" width="1.5" height="12"/>
+      <rect x="489" y="109" width="1.5" height="22"/>
+      <rect x="492" y="119" width="1.5" height="6"/>
+      <rect x="495" y="105" width="1.5" height="30"/>
+      <rect x="498" y="117" width="1.5" height="8"/>
+      <rect x="501" y="103" width="1.5" height="34"/>
+      <rect x="504" y="113" width="1.5" height="14"/>
+      <rect x="507" y="108" width="1.5" height="24"/>
+      <rect x="510" y="118" width="1.5" height="7"/>
+      <rect x="513" y="95" width="1.5" height="50"/>
+      <rect x="516" y="111" width="1.5" height="18"/>
+      <rect x="519" y="106" width="1.5" height="28"/>
+      <rect x="522" y="116" width="1.5" height="8"/>
+      <rect x="525" y="91" width="1.5" height="58"/>
+      <rect x="528" y="114" width="1.5" height="12"/>
+      <rect x="531" y="109" width="1.5" height="22"/>
+      <rect x="534" y="119" width="1.5" height="6"/>
+      <rect x="537" y="104" width="1.5" height="32"/>
+      <rect x="540" y="117" width="1.5" height="8"/>
+      <rect x="543" y="102" width="1.5" height="36"/>
+      <rect x="546" y="115" width="1.5" height="10"/>
+      <rect x="549" y="107" width="1.5" height="26"/>
+      <rect x="552" y="118" width="1.5" height="7"/>
+      <rect x="555" y="98" width="1.5" height="44"/>
+      <rect x="558" y="112" width="1.5" height="16"/>
+      <rect x="561" y="106" width="1.5" height="28"/>
+      <rect x="564" y="116" width="1.5" height="8"/>
+      <rect x="567" y="94" width="1.5" height="52"/>
+      <rect x="570" y="114" width="1.5" height="12"/>
+      <rect x="573" y="109" width="1.5" height="22"/>
+      <rect x="576" y="119" width="1.5" height="6"/>
+      <rect x="579" y="105" width="1.5" height="30"/>
+      <rect x="582" y="117" width="1.5" height="8"/>
+      <rect x="585" y="103" width="1.5" height="34"/>
+      <rect x="588" y="113" width="1.5" height="14"/>
+      <rect x="591" y="108" width="1.5" height="24"/>
+      <rect x="594" y="118" width="1.5" height="7"/>
+      <rect x="597" y="96" width="1.5" height="48"/>
+      <rect x="600" y="115" width="1.5" height="10"/>
+      <rect x="603" y="107" width="1.5" height="26"/>
+      <rect x="606" y="119" width="1.5" height="6"/>
+      <rect x="609" y="101" width="1.5" height="38"/>
+      <rect x="612" y="111" width="1.5" height="18"/>
+      <rect x="615" y="106" width="1.5" height="28"/>
+      <rect x="618" y="116" width="1.5" height="8"/>
+      <rect x="621" y="99" width="1.5" height="42"/>
+      <rect x="624" y="114" width="1.5" height="12"/>
+      <rect x="627" y="109" width="1.5" height="22"/>
+      <rect x="630" y="118" width="1.5" height="7"/>
+      <rect x="633" y="104" width="1.5" height="32"/>
+      <rect x="636" y="117" width="1.5" height="8"/>
+      <rect x="639" y="102" width="1.5" height="36"/>
+      <rect x="642" y="115" width="1.5" height="10"/>
+      <rect x="645" y="108" width="1.5" height="24"/>
+      <rect x="648" y="119" width="1.5" height="6"/>
+      <rect x="651" y="92" width="1.5" height="56"/>
+      <rect x="654" y="112" width="1.5" height="16"/>
+      <rect x="657" y="106" width="1.5" height="28"/>
+      <rect x="660" y="116" width="1.5" height="8"/>
+      <rect x="663" y="97" width="1.5" height="46"/>
+      <rect x="666" y="114" width="1.5" height="12"/>
+      <rect x="669" y="109" width="1.5" height="22"/>
+      <rect x="672" y="118" width="1.5" height="7"/>
+      <rect x="675" y="100" width="1.5" height="40"/>
+      <rect x="678" y="113" width="1.5" height="14"/>
+      <rect x="681" y="107" width="1.5" height="26"/>
+      <rect x="684" y="117" width="1.5" height="8"/>
+      <rect x="687" y="105" width="1.5" height="30"/>
+      <rect x="690" y="115" width="1.5" height="10"/>
+      <rect x="693" y="108" width="1.5" height="24"/>
+      <rect x="696" y="119" width="1.5" height="6"/>
+      <rect x="699" y="111" width="1.5" height="18"/>
+    </g>
   </g>
   
   <!-- Subtle bottom fade -->
-  <path d="M0,280 Q360,240 720,280 T1440,280 V320 H0 Z" fill="#8b4a47" fill-opacity="0.08"/>
+  <path d="M0,175 Q200,150 400,175 T800,175 V200 H0 Z" fill="#8b4a47" fill-opacity="0.08"/>
 </svg>

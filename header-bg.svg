@@ -1,27 +1,62 @@
 <svg width="1440" height="320" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Main background gradient with muted, dusty colors -->
     <linearGradient id="bgGrad" x1="0" y1="0" x2="1440" y2="320" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#d64f18"/>
-      <stop offset="0.35" stop-color="#ff4a35" stop-opacity="0.9"/>
-      <stop offset="0.65" stop-color="#fcce9c" stop-opacity="0.8"/>
-      <stop offset="1" stop-color="#e67e22"/>
+      <stop stop-color="#8b4a47"/>
+      <stop offset="0.25" stop-color="#a4484c"/>
+      <stop offset="0.5" stop-color="#a0594d"/>
+      <stop offset="0.75" stop-color="#c08170"/>
+      <stop offset="1" stop-color="#d4a07a"/>
     </linearGradient>
-    <radialGradient id="rad1" cx="60%" cy="50%" r="60%" fx="60%" fy="50%">
-      <stop offset="0%" stop-color="#fcce9c" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#d64f18" stop-opacity="0"/>
+    
+    <!-- Texture overlay for dusty effect -->
+    <pattern id="texture" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#000" fill-opacity="0.02"/>
+      <circle cx="1" cy="1" r="0.5" fill="#fff" fill-opacity="0.03"/>
+      <circle cx="3" cy="3" r="0.3" fill="#000" fill-opacity="0.01"/>
+    </pattern>
+    
+    <!-- Subtle radial gradients for depth -->
+    <radialGradient id="rad1" cx="70%" cy="40%" r="50%" fx="70%" fy="40%">
+      <stop offset="0%" stop-color="#d4a07a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8b4a47" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="rad2" cx="30%" cy="30%" r="50%" fx="30%" fy="30%">
-      <stop offset="0%" stop-color="#ff4a35" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#d64f18" stop-opacity="0"/>
+    
+    <radialGradient id="rad2" cx="25%" cy="70%" r="40%" fx="25%" fy="70%">
+      <stop offset="0%" stop-color="#a4484c" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#8b4a47" stop-opacity="0"/>
     </radialGradient>
+    <!-- Waveform gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4a07a" stop-opacity="0.3"/>
+      <stop offset="25%" stop-color="#c08170" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#a4484c" stop-opacity="0.7"/>
+      <stop offset="75%" stop-color="#8b4a47" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d4a07a" stop-opacity="0.3"/>
+    </linearGradient>
   </defs>
+  
+  <!-- Base gradient background -->
   <rect width="1440" height="320" fill="url(#bgGrad)"/>
-  <ellipse cx="900" cy="220" rx="400" ry="80" fill="url(#rad1)"/>
-  <ellipse cx="400" cy="100" rx="300" ry="60" fill="url(#rad2)"/>
-  <path d="M0,260 Q360,200 720,260 T1440,260 V320 H0 Z" fill="#fff" fill-opacity="0.12"/>
-  <g opacity="0.15">
-    <path d="M0 60 Q 360 120 720 60 Q 1080 0 1440 60" stroke="#fcce9c" stroke-width="8" fill="none"/>
-    <path d="M0 120 Q 360 180 720 120 Q 1080 60 1440 120" stroke="#ff4a35" stroke-width="6" fill="none"/>
-    <path d="M0 180 Q 360 240 720 180 Q 1080 120 1440 180" stroke="#d64f18" stroke-width="4" fill="none"/>
+  
+  <!-- Texture overlay -->
+  <rect width="1440" height="320" fill="url(#texture)"/>
+  
+  <!-- Subtle depth elements -->
+  <ellipse cx="1000" cy="130" rx="350" ry="60" fill="url(#rad1)"/>
+  <ellipse cx="350" cy="220" rx="250" ry="50" fill="url(#rad2)"/>
+  
+  <!-- Audio waveform spanning most of header width -->
+  <g opacity="0.25">
+    <!-- Main waveform with gradient -->
+    <path d="M80,160 L90,140 L100,180 L110,120 L120,200 L130,100 L140,220 L150,80 L160,240 L170,60 L180,260 L190,40 L200,280 L210,160 L220,150 L230,170 L240,140 L250,180 L260,130 L270,190 L280,125 L290,195 L300,120 L310,200 L320,115 L330,205 L340,110 L350,210 L360,105 L370,215 L380,100 L390,220 L400,95 L410,225 L420,90 L430,230 L440,85 L450,235 L460,80 L470,240 L480,75 L490,245 L500,70 L510,250 L520,65 L530,255 L540,60 L550,260 L560,55 L570,265 L580,50 L590,270 L600,45 L610,275 L620,40 L630,280 L640,160 L650,150 L660,170 L670,140 L680,180 L690,130 L700,190 L710,125 L720,195 L730,120 L740,200 L750,115 L760,205 L770,110 L780,210 L790,105 L800,215 L810,100 L820,220 L830,95 L840,225 L850,90 L860,230 L870,85 L880,235 L890,80 L900,240 L910,75 L920,245 L930,70 L940,250 L950,65 L960,255 L970,60 L980,260 L990,55 L1000,265 L1010,50 L1020,270 L1030,45 L1040,275 L1050,40 L1060,280 L1070,160 L1080,150 L1090,170 L1100,140 L1110,180 L1120,130 L1130,190 L1140,125 L1150,195 L1160,120 L1170,200 L1180,115 L1190,205 L1200,110 L1210,210 L1220,105 L1230,215 L1240,100 L1250,220 L1260,95 L1270,225 L1280,90 L1290,230 L1300,85 L1310,235 L1320,80 L1330,240 L1340,75 L1350,245 L1360,160" 
+          stroke="url(#waveGrad)" stroke-width="4" fill="none"/>
+    
+    <!-- Secondary layer for depth -->
+    <path d="M80,180 L95,175 L110,185 L125,170 L140,190 L155,165 L170,195 L185,160 L200,200 L215,155 L230,205 L245,150 L260,210 L275,145 L290,215 L305,140 L320,220 L335,135 L350,225 L365,130 L380,230 L395,125 L410,235 L425,120 L440,240 L455,115 L470,245 L485,110 L500,250 L515,105 L530,255 L545,100 L560,260 L575,95 L590,265 L605,90 L620,270 L635,85 L650,275 L665,80 L680,280 L695,160 L710,170 L725,150 L740,180 L755,140 L770,190 L785,130 L800,200 L815,120 L830,210 L845,110 L860,220 L875,100 L890,230 L905,90 L920,240 L935,80 L950,250 L965,70 L980,260 L995,60 L1010,270 L1025,50 L1040,280 L1055,160 L1070,170 L1085,150 L1100,180 L1115,140 L1130,190 L1145,130 L1160,200 L1175,120 L1190,210 L1205,110 L1220,220 L1235,100 L1250,230 L1265,90 L1280,240 L1295,80 L1310,250 L1325,70 L1340,260 L1355,160 L1360,170" 
+          stroke="#c08170" stroke-width="2" fill="none" opacity="0.6"/>
   </g>
+  
+  <!-- Subtle bottom fade -->
+  <path d="M0,280 Q360,240 720,280 T1440,280 V320 H0 Z" fill="#8b4a47" fill-opacity="0.08"/>
 </svg>

@@ -13,7 +13,11 @@ echo "Current directory: $(pwd)"
 git config user.name "alex-colemankime" || { echo "Failed to set git username"; exit 1; }
 git config user.email "alex-colemankime@users.noreply.github.com" || { echo "Failed to set git email"; exit 1; }
 
-echo "Git user configured"
+# Update remote URL to correct GitHub username
+echo "Updating remote URL..."
+git remote set-url origin https://github.com/alex-colemankime/wxpn-newsletter.git || { echo "Failed to update remote URL"; exit 1; }
+
+echo "Git user configured and remote URL updated"
 
 # Check status
 echo "Git status:"
@@ -38,4 +42,4 @@ echo "Pushing to GitHub..."
 git push origin main || { echo "Failed to push to GitHub"; exit 1; }
 
 echo "✅ Changes pushed successfully!"
-echo "🚀 Your site will be updated in 1-2 minutes at: https://ack2-gh.github.io/wxpn-newsletter/"
+echo "🚀 Your site will be updated in 1-2 minutes at: https://alex-colemankime.github.io/wxpn-newsletter/"

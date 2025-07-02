@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy Newsletter Changes",
+            "type": "shell",
+            "command": "bash",
+            "args": ["-c", "cd /Users/ack2/wxpn-newsletter && git config user.name 'alex-colemankime' && git config user.email 'alex-colemankime@users.noreply.github.com' && git add . && git commit -m 'Update Lauryn Hill story' && git push origin main"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}

@@ -9,19 +9,18 @@
     <style>
         /* Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; }
         body { font-family: 'Public Sans', Arial, sans-serif; line-height: 1.6; color: #2c2c2c; background: #f8f9fa; }
         .email-container { max-width: 680px; margin: 0 auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
         
         /* Header */
-        .header { background: #8b4a47; padding: 24px 32px; }
+        .header { background: #1a365d url('header-bg.svg') center/cover; padding: 24px 32px; }
         .logo { color: #fff; font: 900 32px 'Lora', serif; letter-spacing: -0.5px; margin-bottom: 2px; }
         .tagline { color: #f7fafc; font: 500 14px 'Lora', serif; letter-spacing: 0.3px; }
         
         /* Layout Sections */
         .issue-info { background: #f7fafc; border-bottom: 1px solid #e2e8f0; padding: 3px 32px; font: 600 16px 'Lora', serif; color: #718096; text-align: center; letter-spacing: 0.5px; }
         .intro-section { padding: 20px 0; border: 1px solid #e2e8f0; border-left: 0; border-right: 0; background: #f9fafb; }
-        .hero-content { padding: 24px 32px; background: #fff; }
+        .hero-content { padding: 24px; background: #fff; }
         .main-content { padding: 24px 32px 16px; }
         .story-item { margin-bottom: 16px; padding: 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0; }
         
@@ -73,7 +72,7 @@
             .email-container { margin: 0; box-shadow: none; }
             .header { padding: 20px 16px; }
             .issue-info { padding: 8px 16px; font-size: 14px; }
-            .intro-section { padding: 20px 0; }
+            .intro-section { padding: 20px 16px; }
             .main-content { padding: 16px; }
             
             /* Hero story mobile */
@@ -239,9 +238,7 @@
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                     <td align="left" valign="middle">
-                        <a href="https://xpn.org/" style="text-decoration: none; color: inherit;">
-                            <div class="logo" aria-label="WXPN logo">WXPN Top Stories</div>
-                        </a>
+                        <div class="logo" aria-label="WXPN logo">WXPN Top Stories</div>
                         <div class="tagline">Listen, Watch, Discover</div>
                     </td>
                     <td align="right" valign="middle">
@@ -253,13 +250,15 @@
 
         <!-- Issue info -->
         <div class="issue-info" role="region" aria-label="Issue information" pardot-region>
-            Tuesday, July 15, 2025
+            Wednesday, July 2, 2025
         </div>
 
         <!-- Intro Section -->
         <section class="intro-section" role="region" aria-labelledby="intro-title" pardot-region>
-            <div class="intro-text" style="font:400 16px 'Public Sans',sans-serif; line-height:1.7; color:#4a5568; padding:0 32px;">
-                Welcome to another edition of WXPN Top Stories! This week we're diving into Lauryn Hill's surprise Beardfest appearance, celebrating our 24 Hour Song Challenge winner, and exploring musical gems World Cafe captured in Rome. Plus, don't miss our latest video highlights and upcoming concert picks.
+            <div style="max-width:600px; margin:0 auto; padding:0 16px;">
+                <div class="intro-text" style="font:400 16px 'Public Sans',sans-serif; line-height:1.7; color:#4a5568;">
+                    Welcome to another edition of WXPN Top Stories! This week we're diving into Lauryn Hill's surprise Beardfest appearance, celebrating our 24 Hour Song Challenge winner, and exploring musical gems World Cafe captured in Rome. Plus, don't miss our latest video highlights and upcoming concert picks.
+                </div>
             </div>
         </section>
 
@@ -272,8 +271,10 @@
                 
                 <a href="https://xpn.org/2025/07/01/lauryn-hill-beardfest/" style="display:block; background:linear-gradient(135deg, #c05659 0%, #a04649 100%); color:#fff; padding:10px 16px; text-decoration:none; font:700 13px 'Public Sans',sans-serif; text-transform:uppercase; letter-spacing:0.8px; text-align:center; border-radius:0 0 8px 8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
                     <span style="display:inline-flex; align-items:center; gap:6px;">
-                        Read The Full Story
-                        →
+                        Read Full Story
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
                     </span>
                 </a>
             </div>
@@ -427,8 +428,8 @@
                             <td width="200" valign="top" style="padding:16px;">
                                 <a href="https://www.youtube.com/watch?v=2YTdNVBB8uk" style="display:block; position:relative;">
                                     <img src="https://img.youtube.com/vi/2YTdNVBB8uk/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3); font-size:16px;">
-                                        ▶
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
@@ -448,8 +449,8 @@
                             <td width="200" valign="top" style="padding:16px;">
                                 <a href="https://www.youtube.com/watch?v=_uwAs7gf5E0" style="display:block; position:relative;">
                                     <img src="https://img.youtube.com/vi/_uwAs7gf5E0/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3); font-size:16px;">
-                                        ▶
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
@@ -469,8 +470,8 @@
                             <td width="200" valign="top" style="padding:16px;">
                                 <a href="https://www.youtube.com/watch?v=DUiiZhHbXqU" style="display:block; position:relative;">
                                     <img src="https://img.youtube.com/vi/DUiiZhHbXqU/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3); font-size:16px;">
-                                        ▶
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
@@ -490,8 +491,8 @@
                             <td width="200" valign="top" style="padding:16px;">
                                 <a href="https://www.youtube.com/watch?v=CyyuGcd8tzI" style="display:block; position:relative;">
                                     <img src="https://img.youtube.com/vi/CyyuGcd8tzI/hqdefault.jpg" alt="Video Thumbnail" width="180" height="101" style="border-radius:10px; object-fit:cover; display:block; box-shadow:0 2px 12px rgba(0,0,0,0.15);" />
-                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3); font-size:16px;">
-                                        ▶
+                                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(219,64,67,0.9); color:#fff; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                                     </div>
                                 </a>
                             </td>
@@ -551,7 +552,7 @@
                         Philadelphia, PA 19104
                     </div>
                     <div style="font-size:11px; margin-bottom:8px;">
-                        {{EmailPreferenceCenter}} | {{Unsubscribe}}
+                        <a href="#" style="color:#718096; text-decoration:underline;">Update subscription preferences</a>
                     </div>
                     <div style="font-size:11px;">Copyright © 2025, All rights reserved.</div>
                 </div>
